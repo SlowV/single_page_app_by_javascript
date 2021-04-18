@@ -10,6 +10,7 @@ export default class extends AbstractView {
         return `
             <h1>Posts</h1>
             <p>You are viewing the posts!</p>
+            <a href="/post/1">Read detail</a>
         `;
     }
 }
