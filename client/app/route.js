@@ -1,7 +1,7 @@
-import Dashboard from "./views/Dashboard.js";
-import Posts from "./views/Posts.js";
-import PostView from "./views/PostView.js";
-import Settings from "./views/Settings.js";
+import Dashboard from "./pages/Dashboard.js";
+import Posts from "./pages/Posts.js";
+import PostView from "./pages/PostView.js";
+import Settings from "./pages/Settings.js";
 
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
@@ -45,7 +45,6 @@ export const router = async () => {
     }
 
     const view = new match.route.view(getParams(match));
-
     document.querySelector("#app").innerHTML = await view.getHtml();
 };
 
@@ -53,9 +52,9 @@ window.addEventListener("popstate", router);
 
 document.addEventListener("DOMContentLoaded", () => {
     document.body.addEventListener("click", e => {
-        if (e.target.matches("[data-link]")) {
+        if (e.target.hasAttribute("router-link")) {
             e.preventDefault();
-            navigateTo(e.target.href);
+            navigateTo(e.target.getAttribute("router-link"));
         }
     });
 

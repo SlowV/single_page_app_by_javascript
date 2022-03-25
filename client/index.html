@@ -6,16 +6,16 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Single Page App</title>
-    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/assets/css/index.css">
 </head>
 <body>
 
 <nav class="nav">
-    <a href="/" class="nav__link" data-link>Dashboard</a>
-    <a href="/post" class="nav__link" data-link>Post</a>
-    <a href="/settings" class="nav__link" data-link>Settings</a>
+    <a router-link="/">Dashboard</a>
+    <a router-link="/post">Post</a>
+    <a router-link="/settings">Settings</a>
 </nav>
 <div id="app"></div>
-<script type="module" src="/static/js/index.js"></script>
+<script type="module" src="/app/index.js"></script>
 </body>
 </html>
