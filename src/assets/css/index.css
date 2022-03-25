@@ -1,0 +1,73 @@
+:root {
+    --nav-width: 300px;
+    --white: #fff;
+    --m-p-basic: 20px;
+    --secondary: #606060;
+}
+
+body {
+    margin: 0 0 0 var(--nav-width);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--nav-width);
+    height: 100vh;
+    background: #222222;
+    padding: 0;
+    margin: 0;
+}
+
+a[routerLink] {
+    position: relative;
+    color: var(--secondary);
+    padding: 10px;
+    display: block;
+    transition: .3s;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+a[routerLink]:hover {
+    background: rgba(255, 255, 255, 0.29);
+    color: var(--white);
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    position: relative;
+    width: 100%;
+    display: flex;
+    margin: 0;
+    padding: 10px 0;
+    flex-direction: column;
+}
+
+li {
+    list-style: none;
+}
+
+#app {
+    position: relative;
+    background: linear-gradient(120deg, #f6d365, #fda085);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+route-outlet {
+    /*background: var(--white);*/
+    display: block;
+    padding: 10px;
+}
